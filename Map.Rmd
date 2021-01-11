@@ -1,0 +1,24 @@
+---
+title: "Night map"
+author: "Nicolás Rivera Garzón"
+date: "11/1/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+install.packages("leaflet", repos = "http://cran.us.r-project.org")
+library(leaflet)
+mymap <- leaflet() %>%
+addTiles() %>%
+setView( lng=-0.127949, lat=51.507752, zoom = 5 ) %>%
+addProviderTiles("NASAGIBS.ViirsEarthAtNight2012")
+mymap
+```
+
